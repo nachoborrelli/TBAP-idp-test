@@ -34,3 +34,4 @@ class UserProfileMe(APIView):
         else:
             return Response({'data': 'User not authenticated'}, status=status.HTTP_401_UNAUTHORIZED)
 
+

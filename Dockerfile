@@ -5,6 +5,8 @@ RUN apt update
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
+RUN apt-get -y install xmlsec1
+
 WORKDIR /code
 
 COPY requirements.txt ./
