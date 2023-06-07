@@ -7,12 +7,11 @@ from dj_rest_auth.views import LoginView, LogoutView
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import url
-import django_saml2_auth.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    url(r'^sso/', include('django_saml2_auth.urls')),
+    path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
 
     # Auth
     path('login/', LoginView.as_view(),name='login'),

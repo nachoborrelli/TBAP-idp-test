@@ -5,6 +5,9 @@ from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 from django.utils.translation import gettext_lazy as _
 from users.serializers import UserProfileSerializer, UserSerializer
+from oauth2_provider.oauth2_validators import OAuth2Validator
+# ProtectedResourceView
+from oauth2_provider.views.generic import ProtectedResourceView
 
 
 class UserProfileMe(APIView):
@@ -35,3 +38,11 @@ class UserProfileMe(APIView):
             return Response({'data': 'User not authenticated'}, status=status.HTTP_401_UNAUTHORIZED)
 
 
+
+
+class TestingOAuth(ProtectedResourceView, APIView):
+    """
+    A GET endpoint that needs OAuth2 authentication
+    """
+    def get(self, request, *args, **kwargs):
+        return Response('Hello, World!')

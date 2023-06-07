@@ -322,3 +322,6 @@ $RECYCLE.BIN/
 
 #data
 data
+
+#keys
+*.pem
