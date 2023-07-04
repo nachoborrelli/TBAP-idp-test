@@ -2,7 +2,7 @@ from django.urls import path
 
 from users.register_views import PasswordRecoveryEmailSend, CheckToken, PasswordRecoveryConfirm,PasswordChangeViewModify
 
-from users.views import UserProfileMe, TestingOAuth
+from users.views import UserProfileMe
 
 
 urlpatterns = [
@@ -13,7 +13,5 @@ urlpatterns = [
     path('password-recovery/confirm/', PasswordRecoveryConfirm.as_view(), name='password_recovery_confirm'),
     # User management
     path('me/', UserProfileMe.as_view(), name='user_profile_me'),
-    # OAuth2
-    path('oauth2/', TestingOAuth.as_view(), name='oauth2_token'),
 
 ]

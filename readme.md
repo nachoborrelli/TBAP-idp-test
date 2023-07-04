@@ -4,3 +4,8 @@
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+
+Correrlo con:
+python3 manage.py runsslserver --certificate cert.pem --key key.pem 127.0.0.1:8001
+https://timonweb.com/django/https-django-development-server-ssl-certificate/

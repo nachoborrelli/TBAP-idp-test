@@ -7,6 +7,7 @@ from dj_rest_auth.views import LoginView, LogoutView
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import url
+from users.views import UserInfo
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -21,6 +22,7 @@ urlpatterns = [
     path('account-email-verification-sent/', EmailVerification.as_view(), name='account_email_verification_sent'),
     path('resend-email/', ResendEmailVerificationView.as_view(), name="rest_resend_email"),
 
+    path('userinfo/', UserInfo.as_view(), name='userinfo'),
     # Apps
     path('api/users/', include('users.urls')),
 
